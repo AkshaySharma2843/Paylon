@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="#F8B24C"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_beer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beer Name:-"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_beer_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_beer_name_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_medium"
+            android:hint="Beer Name"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_beer_image"
+            app:layout_constraintStart_toEndOf="@id/tv_beer_name"
+            app:layout_constraintTop_toTopOf="@+id/iv_beer_image" />
+
+        <TextView
+            android:id="@+id/tv_tagline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tagline"
+            android:layout_marginTop="20dp"
+            android:textColor="#7C10A3"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/tv_beer_name_details"
+            app:layout_constraintStart_toStartOf="@+id/tv_beer_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_beer_name_details" />
+
+        <ImageView
+            android:id="@+id/iv_beer_image"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

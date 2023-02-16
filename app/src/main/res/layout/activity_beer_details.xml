@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_beer_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Beer Name"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_beer_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_italic"
+        android:text="tagline"
+        android:textColor="#7C10A3"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_beer_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer_name" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_square_border"
+        app:layout_constraintEnd_toEndOf="@+id/tv_beer_tagline"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_tagline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer_tagline">
+
+        <ImageView
+            android:id="@+id/iv_beer_image"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description :-"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_image"/>
+
+    <TextView
+        android:id="@+id/tv_description_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/opensans_medium"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_general_details"
+        android:layout_width="match_parent"
+        android:background="@drawable/ic_layout_border"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_details">
+
+        <TextView
+            android:id="@+id/tv_general_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:text="General Details"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_general_details_down_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_general_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_general_details" />
+
+        <ImageView
+            android:id="@+id/iv_general_details_up_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_up"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_general_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_general_details"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_general_details_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_general_details_down_arrow"
+            tools:layout_editor_absoluteX="5dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/tv_first_brewed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="First Brewed :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_abv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="ABV :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_first_brewed"
+                app:layout_constraintTop_toBottomOf="@+id/tv_first_brewed" />
+
+            <TextView
+                android:id="@+id/tv_ibu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="IBU :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_abv"
+                app:layout_constraintTop_toBottomOf="@+id/tv_abv" />
+
+            <TextView
+                android:id="@+id/tv_target_fg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Target FG :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_ibu"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ibu" />
+
+            <TextView
+                android:id="@+id/tv_target_og"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Target OG :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_target_fg"
+                app:layout_constraintTop_toBottomOf="@+id/tv_target_fg" />
+
+            <TextView
+                android:id="@+id/tv_ebc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="EBC :-"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_target_og"
+                app:layout_constraintTop_toBottomOf="@+id/tv_target_og" />
+
+            <TextView
+                android:id="@+id/tv_srm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="SRM :-"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_ebc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ebc" />
+
+            <TextView
+                android:id="@+id/tv_ph"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PH :-"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_srm"
+                app:layout_constraintTop_toBottomOf="@+id/tv_srm" />
+
+            <TextView
+                android:id="@+id/tv_attenuation_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Attenuation Level :-"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tv_ph"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ph" />
+
+
+            <TextView
+                android:id="@+id/tv_first_brewed_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tv_first_brewed"
+                app:layout_constraintTop_toTopOf="@id/tv_first_brewed"
+                android:textSize="12sp"
+                android:layout_marginEnd="5dp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_abv_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_abv"
+                app:layout_constraintTop_toTopOf="@id/tv_abv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_target_fg_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_target_fg"
+                app:layout_constraintTop_toTopOf="@id/tv_target_fg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_target_og_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_target_og"
+                app:layout_constraintTop_toTopOf="@id/tv_target_og"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_ebc_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_ebc"
+                app:layout_constraintTop_toTopOf="@id/tv_ebc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_srm_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_srm"
+                app:layout_constraintTop_toTopOf="@id/tv_srm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_ph_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_ph"
+                app:layout_constraintTop_toTopOf="@id/tv_ph"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_attenuation_level_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_attenuation_level"
+                app:layout_constraintTop_toTopOf="@id/tv_attenuation_level"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/tv_ibu_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_ibu"
+                app:layout_constraintTop_toTopOf="@id/tv_ibu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_ingredients_details"
+        android:layout_width="match_parent"
+        android:background="@drawable/ic_layout_border"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_general_details">
+
+        <TextView
+            android:id="@+id/tv_ingredients_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:text="Ingredients"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_ingredients_down_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ingredients_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_ingredients_details" />
+
+        <ImageView
+            android:id="@+id/iv_ingredients_up_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_up"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ingredients_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_ingredients_details"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_ingredients_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_ingredients_down_arrow">
+
+            <TextView
+                android:id="@+id/tv_malt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Malt :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_malt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_malt"/>
+
+            <TextView
+                android:id="@+id/tv_hops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:layout_marginTop="10dp"
+                android:text="Hops :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rec_malt"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_hops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_hops"/>
+
+            <TextView
+                android:id="@+id/tv_yeast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:layout_marginTop="10dp"
+                android:text="Yeast :-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rec_hops"/>
+
+            <TextView
+                android:id="@+id/tv_yeast_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_yeast"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_yeast"
+                app:layout_constraintTop_toTopOf="@id/tv_yeast" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_method_details"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_layout_border"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/cl_ingredients_details">
+
+                <TextView
+                    android:id="@+id/tv_method_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Methods"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_method_down_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_down"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_method_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_method_details" />
+
+                <ImageView
+                    android:id="@+id/iv_method_up_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_method_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_method_details"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_method_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_method_down_arrow">
+
+                    <TextView
+                        android:id="@+id/tv_mash_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="Mash Temp :-"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rec_mash_temp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_mash_temp"/>
+
+                    <TextView
+                        android:id="@+id/tv_fermentation_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_medium"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:text="Fermentation Temp Value :-"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rec_mash_temp"/>
+
+                    <TextView
+                        android:id="@+id/tv_fermentation_value_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_fermentation_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_fermentation_value"
+                        app:layout_constraintTop_toTopOf="@id/tv_fermentation_value" />
+
+                    <TextView
+                        android:id="@+id/tv_fermentation_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_medium"
+                        android:layout_marginTop="10dp"
+                        android:text="Fermentation Temp Unit :-"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_fermentation_value"/>
+
+                    <TextView
+                        android:id="@+id/tv_fermentation_unit_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="12sp"
+                        android:gravity="end"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_fermentation_unit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_fermentation_unit"
+                        app:layout_constraintTop_toTopOf="@id/tv_fermentation_unit" />
+
+                    <TextView
+                        android:id="@+id/tv_twist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_bold"
+                        android:layout_marginTop="10dp"
+                        android:text="Twist :-"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_fermentation_unit"/>
+
+                    <TextView
+                        android:id="@+id/tv_twist_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_twist"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_twist"
+                        app:layout_constraintTop_toTopOf="@id/tv_twist" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_food_pairing_details"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_layout_border"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/cl_method_details">
+
+                <TextView
+                    android:id="@+id/tv_food_pairing_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Food Pairing"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_food_pairing_down_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_down"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_pairing_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_pairing_details" />
+
+                <ImageView
+                    android:id="@+id/iv_food_pairing_up_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_pairing_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_pairing_details"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_food_pairing_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_food_pairing_details"
+                    tools:layout_editor_absoluteX="5dp">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rec_food_pairing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_brewers_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brewers Tips :-"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_food_pairing_details"/>
+
+            <TextView
+                android:id="@+id/tv_brewers_tips_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/opensans_medium"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_brewers_tips"
+                app:layout_constraintTop_toBottomOf="@+id/tv_brewers_tips"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
